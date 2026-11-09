@@ -1,0 +1,21 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+def gdxVersion = '1.14.2'
+
+dependencies {
+    implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+}
+
+application {
+    mainClass = 'mapscroll.MapScroll'
+    // Silences the JDK's warning about LWJGL loading native libraries.
+    applicationDefaultJvmArgs = ['--enable-native-access=ALL-UNNAMED']
+}
